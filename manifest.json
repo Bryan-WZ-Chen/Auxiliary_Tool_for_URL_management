@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "URL_Manager",
+    "description": "Avoid same URL in tab or same content with different URLs",
+    "version": "1.0",
+    "icons": {
+        "16":"images/icon_main_16.png",
+        "48":"images/icon_main_48.png",
+        "128":"images/icon_main_128.png"
+    },
+    "page_action":{
+        "default_icon":{
+            "16":"images/icon_sub_16.png",
+            "48":"images/icon_sub_48.png",
+            "128":"images/icon_sub_128.png"
+        }
+    },
+    "permissions": [ "<all_urls>", "tabs", "storage"],
+    "content_scripts":[
+        {
+            "matches":[
+                "<all_urls>"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+    "background": { "scripts": ["background.js"] }
+}
